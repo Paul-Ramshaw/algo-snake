@@ -20,6 +20,10 @@ let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('game-board');
 
+alert(
+  "Use arrow keys to control Snake.  You get a point for each piece of food you eat.  You lose a point if you're beaten to the food."
+);
+
 function main(currentTime) {
   if (gameOver) {
     if (
