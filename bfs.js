@@ -3,30 +3,26 @@ import { food } from './food.js';
 import { roboSnake } from './robo-snake.js';
 
 export function bfs() {
-  var startPosition = roboSnake.startPosition;
-
-  var start = graph.setStart([startPosition.x, startPosition.y]);
-  var end = graph.setEnd([food.x, food.y]);
-  var queue = [];
+  const startPosition = roboSnake.startPosition;
+  const start = graph.setStart([startPosition.x, startPosition.y]);
+  const end = graph.setEnd([food.x, food.y]);
+  const queue = [];
 
   start.searched = true;
   queue.push(start);
-  var searchPath = [];
+  const searchPath = [];
 
   while (queue.length > 0 && start && end) {
-    var current = queue[0];
+    const current = queue[0];
     searchPath.push(current);
 
     if (current == end) {
-      // console.log(
-      //   'Started at ' + start.value + ' Food found at ' + current.value
-      // );
       return {
         searchPath: searchPath,
         end: end,
       };
     }
-    var edges = current.edges;
+    const edges = current.edges;
 
     for (let i = 0; i < edges.length; i++) {
       const neighbour = edges[i];

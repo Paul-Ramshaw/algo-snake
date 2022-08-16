@@ -21,7 +21,6 @@ function neighbours(node) {
   const result = [];
   directions.map((direction) => {
     const neighbour = [node[0] + direction[0], node[1] + direction[1]];
-    // console.log(neighbour);
     if (
       neighbour[0] >= 0 &&
       neighbour[0] <= GRID_SIZE &&
@@ -92,9 +91,7 @@ export function buildGraph() {
     let edgeLocations = neighbours(locations[i]);
 
     edgeLocations.map((edgeLocation) => {
-      // console.log(edgeLocation);
       let neighbourNode = graph.getNode(edgeLocation);
-      // console.log(neighbourNode);
       if (neighbourNode != undefined) {
         n.addEdge(neighbourNode);
       }
